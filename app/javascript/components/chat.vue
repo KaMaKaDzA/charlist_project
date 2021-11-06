@@ -104,7 +104,7 @@ export default {
     border-color: #454545;
     border-radius: 5px;
     border-style: inset;
-    position: absolute;
+    position: fixed;
     left: 79vw;
     top: 50vh;
   }

@@ -56,4 +56,8 @@ export default {
     font-size: xxx-large;
     margin: 5px;
   }
+
+  body {
+    overflow-x: hidden;
+  }
 </style>

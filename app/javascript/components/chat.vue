@@ -1,5 +1,5 @@
 <template>
-  <div ref="chatContainer" id="chat-container">
+  <div ref="chatContainer" id="chat-container" v-show="isShown">
     <div id="chat-header" @mousedown="dragMouseDown">
       <i class="fa fa-backward m-icon" @click="prevPage"></i>
       <div id="channel-container">
@@ -9,7 +9,7 @@
         </div>
       </div>
       <i class="fa fa-forward m-icon" @click="nextPage"></i>
-      <i class="fa fa-window-close m-icon"></i>
+      <i class="fa fa-window-close m-icon" @click="hideChat"></i>
     </div>
     <div id="chat-body">
       <div class="message_box"></div>
@@ -18,7 +18,6 @@
       <textarea id="text-input" v-model="new_message" placeholder="Введите сообщение" ></textarea>
       <i class="fa fa-paper-plane" aria-hidden="true" id="send-icon" v-on:click="sendMessage"></i>
     </div>
-
   </div>
 </template>
 
@@ -38,7 +37,8 @@ export default {
         channel_id: 3
       }],
       pageNumber: 0,
-      size: 2
+      size: 2,
+      isShown: false
     }
   },
   methods: {
@@ -79,6 +79,12 @@ export default {
       if (this.pageNumber > 0) {
         this.pageNumber--;
       }
+    },
+    hideChat(){
+      this.isShown = false;
+    },
+    showChat(){
+      this.isShown = true;
     }
   },
   computed: {

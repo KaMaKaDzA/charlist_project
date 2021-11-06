@@ -4,25 +4,30 @@
       <i class="fa fa-sign-in header-icon" aria-hidden="true"></i>
       <i class="fa fa-user-o header-icon" aria-hidden="true"></i>
       <i class="fa fa-cog header-icon" aria-hidden="true"></i>
-      <i class="fa fa-weixin header-icon" aria-hidden="true"></i>
+      <i class="fa fa-weixin header-icon" aria-hidden="true" @click="showChat"></i>
     </div>
     <div id="content-container">
       <div id="main-content">
         <user_article></user_article>
         <user_article></user_article>
       </div>
-      <chat></chat>
+      <chat ref="chatContainer"></chat>
     </div>
   </div>
 </template>
 
 <script>
 import chat from "./chat.vue";
-import user_article from "./article.vue";
+import user_article from "./user_article.vue";
 export default {
   components: {
     chat: chat,
     user_article: user_article
+  },
+  methods: {
+  showChat(){
+    this.$refs.chatContainer.showChat()
+  }
   }
 };
 </script>

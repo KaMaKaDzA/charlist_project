@@ -1,15 +1,15 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
-  database: db_development
   pool: 50
   username: postgres
   password: 123qwe123qwe
+  host: db
+
+development:
+  <<: *default
+  database: db_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: db_test
-  pool: 5
-  username: postgres
-  password: 123qwe123qwe

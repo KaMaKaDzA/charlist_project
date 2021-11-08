@@ -1,6 +1,7 @@
 <template>
   <div id="base-container">
     <div id="header">
+      <a href="/users/sign_out"> Sign out </a>
       <i class="fa fa-sign-in header-icon" aria-hidden="true"></i>
       <i class="fa fa-user-o header-icon" aria-hidden="true"></i>
       <i class="fa fa-cog header-icon" aria-hidden="true"></i>

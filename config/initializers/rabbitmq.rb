@@ -1,0 +1,1 @@
+RABBIT_MQ_CONNECTION = Bunny.new(host:ENV['RABBITMQ_HOST']).start

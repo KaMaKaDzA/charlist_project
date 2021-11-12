@@ -1,1 +1,8 @@
-RABBIT_MQ_CONNECTION = Bunny.new(host:ENV['RABBITMQ_HOST']).start
+require "#{Rails.root}/lib/rabbitmq/client"
+
+RABBITMQ_COMPILER = RabbitMQ::Client.new(1)
+
+exchange = RABBITMQ_COMPILER.create_exchange("pdf_compilation", 'topic', { auto_delete: false, durable: true })
+
+RABBITMQ_COMPILER.create_queue('pdf_compilation.responce', { durable: true }, exchange, { routing_key: 'pdf_compilation.responce' })
+RABBITMQ_COMPILER.create_queue('pdf_compilation.send', { durable: true }, exchange, { routing_key: 'pdf_compilation.send' })

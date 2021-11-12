@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 
 gem "bunny", ">= 2.19.0"
-gem 'gon'
+gem 'sneakers'
 
 # gem 'redis-rails'
 

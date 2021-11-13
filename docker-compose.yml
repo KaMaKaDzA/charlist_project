@@ -4,7 +4,7 @@ services:
     image: postgres:14
     container_name: db
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data:cached
+      - db_volume:/var/lib/postgresql/data:cached
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123qwe123qwe
@@ -12,7 +12,7 @@ services:
 
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bin/webpack && rails s -p 3000 -b '0.0.0.0'"
     container_name: web
     volumes:
       - .:/app
@@ -27,6 +27,15 @@ services:
     links:
       - rabbitmq
 
+  webpacker:
+    build: .
+    container_name: webpacker
+    command: bin/webpack-dev-server
+    volumes:
+      - .:/app:cached
+    ports:
+      - "3035:3035"
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -39,6 +48,9 @@ services:
     container_name: redis
     ports:
       - 6379:6379
+
+volumes:
+  db_volume:
 
 networks:
   default:

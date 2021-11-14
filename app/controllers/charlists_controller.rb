@@ -1,8 +1,9 @@
-class PagesController < ApplicationController
+class CharlistsController < ApplicationController
   before_action :authenticate_user!
 
   def index
     @charlists = Charlist.all
+    @user_id = current_user&.id
   end
 
   def create
@@ -22,6 +23,10 @@ class PagesController < ApplicationController
   end
 
   def download
+
+  end
+
+  def construct
 
   end
 end

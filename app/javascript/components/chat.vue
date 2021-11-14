@@ -111,7 +111,7 @@ export default {
     border-radius: 5px;
     border-style: inset;
     position: fixed;
-    left: 79vw;
+    left: 0.2vw;
     top: 50vh;
   }
 

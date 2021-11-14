@@ -35,55 +35,6 @@ export default {
 </script>
 
 <style>
-.create_btn {
-  background-color: #608cff;
-  border-style: inset;
-  border-color: black;
-  border-radius: 6px;
-  padding: 0.4vw;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
-  text-decoration: none;
-  color: #ebf6ff;
-  margin-left: 55vw;
-
-}
-
-.system_header_container {
-  display: flex;
-  flex-direction: row;
-  border-bottom-color: black;
-  border-bottom-style: solid;
-  width: 65vw;
-}
-
-.charlist_name {
-  max-width: 8vw;
-  align-self: start;
-}
-
-.system_container{
-  display: flex;
-  flex-direction: column;
-  padding: 2% 5% 2% 5%;
-  align-items: start;
-  width: 65vw;
-  background-color: white;
-  margin-top: 2%;
-  height: 70vh;
-}
-
-.charlists_container {
-  display: flex;
-  flex-direction: row;
-}
-
-.charlist_image {
-  width: 8vw;
-  height: 18vh;
-  align-self: start;
-}
-
 div#content-container {
   order: 2;
   flex-grow: 5;

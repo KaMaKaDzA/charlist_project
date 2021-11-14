@@ -1,9 +1,9 @@
 class CharlistsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user_id
 
   def index
     @charlists = Charlist.all
-    @user_id = current_user&.id
   end
 
   def create
@@ -28,5 +28,11 @@ class CharlistsController < ApplicationController
 
   def construct
 
+  end
+
+  private
+
+  def set_user_id
+    @user_id = current_user&.id
   end
 end

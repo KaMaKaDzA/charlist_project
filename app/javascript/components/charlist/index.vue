@@ -2,7 +2,7 @@
   <div id="base-container">
     <custom_header v-on:showChat="showChat" :user_id="user_id"></custom_header>
     <div id="content-container">
-      <system_container :system_name="system_name" v-for="system in systems"></system_container>
+      <system_container :system_name="system_name" v-for="system in systems" :key="system"></system_container>
       <chat ref="chatContainer"></chat>
     </div>
   </div>

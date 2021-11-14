@@ -3,7 +3,7 @@
     <custom_header v-on:showChat="showChat" :user_id="user_id"></custom_header>
     <div id="content-container">
       <div id="main-content">
-        <user_article v-for="article in articles"></user_article>
+        <user_article v-for="article in articles" :key="article"></user_article>
       </div>
       <chat ref="chatContainer"></chat>
     </div>

@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 2021_11_13_225540) do
 
   create_table "charlists", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "system_list_type"
-    t.integer "system_list_id"
+    t.string "system_list_type"
+    t.bigint "system_list_id"
+    t.string "pdf_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["system_list_type", "system_list_id"], name: "index_charlists_on_system_list"
   end
 
   create_table "dnd5e_fields_lists", force: :cascade do |t|

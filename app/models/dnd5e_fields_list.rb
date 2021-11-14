@@ -1,3 +1,3 @@
 class Dnd5eFieldsList < ApplicationRecord
-  # belongs_to :system_list, polymorphic: true
+  has_one :charlist, as: :system_list
 end

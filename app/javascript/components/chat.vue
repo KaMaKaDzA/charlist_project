@@ -3,7 +3,7 @@
     <div id="chat-header" @mousedown="dragMouseDown">
       <i class="fa fa-backward m-icon" @click="prevPage"></i>
       <div id="channel-container">
-        <div class="channel"  v-for="channel in paginatedChannels">
+        <div class="channel" v-for="channel in paginatedChannels" :key="channel">
           <p class="channel-name">{{channel.channel_name}}</p>
           <i class="fa fa-window-close small-close" v-on:click="closeChannel(channel.channel_id)"></i>
         </div>

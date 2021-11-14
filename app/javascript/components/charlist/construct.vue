@@ -7,7 +7,7 @@
       <img class="charlist-page" src="https://cs10.pikabu.ru/post_img/big/2018/04/06/7/1523011280147154473.png">
       <input class="hidden-input" id="name" type="text" v-model="name">
       <input class="hidden-input" id="strength" type="text" v-model="strength">
-      <a href="" id="save_btn">Save</a>
+      <a href="" id="save_btn" @click="saveCharlist">Save</a>
       <chat ref="chatContainer"></chat>
     </div>
   </div>
@@ -16,11 +16,11 @@
 <script>
 import custom_header from "../custom_header.vue";
 import chat from "../chat.vue";
+import axios from 'axios';
 
 export default {
   data() {
-    return {
-    }
+    return {}
   },
   components: {
     custom_header: custom_header,
@@ -30,13 +30,22 @@ export default {
   methods: {
     showChat() {
       this.$refs.chatContainer.showChat()
+    },
+    saveCharlist() {
+      axios
+          .post(`/charlists`, {
+            name: this.name,
+          })
+          .then(response => {
+            this.$router.push('/charlists');
+          })
     }
   }
 };
 </script>
 
 <style>
-#save_btn{
+#save_btn {
   background-color: #608cff;
   border-style: inset;
   border-color: black;

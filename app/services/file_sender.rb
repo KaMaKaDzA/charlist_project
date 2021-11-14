@@ -1,6 +1,10 @@
 class FileSender < ApplicationService
-  def call(payload)
+  def initialize(payload)
+    @payload = payload
+  end
+
+  def call
     # TODO implement file sending system
-    p "#{payload}"
+    p "#{@payload} - from rabbitmq compiler"
   end
 end

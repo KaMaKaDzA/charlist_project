@@ -28,7 +28,7 @@ module RabbitMQ
       @queues[name] = @channel.queue(name, options).bind(exchange, binding_options)
     end
 
-    def publish(queue_name, payload, options)
+    def publish(queue_name, payload, options = {})
       @queues[queue_name].publish(payload, options)
     end
   end

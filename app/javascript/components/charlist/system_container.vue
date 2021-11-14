@@ -5,7 +5,7 @@
       <a class="create_btn" href="/charlists/new/construct">Create new</a>
     </div>
     <div class="charlists_container">
-      <charlist :name="charlist_name" v-for="charlist in charlists"></charlist>
+      <charlist :name="charlist_name" v-for="charlist in charlists" :key="charlist"></charlist>
     </div>
   </div>
 </template>

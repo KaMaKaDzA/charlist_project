@@ -1,3 +1,3 @@
 class Charlist < ApplicationRecord
-  # has_one :system_lists, polymorphic: true
+  belongs_to :system_list, polymorphic: true, dependent: :destroy
 end

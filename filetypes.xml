@@ -2,6 +2,7 @@
   <component name="FileTypeManager" version="18">
     <extensionMap>
       <mapping pattern="Charlist.rb" type="AUTO_DETECTED" />
+      <mapping pattern=".webpacker.env" type="PLAIN_TEXT" />
       <mapping pattern=".env" type="PLAIN_TEXT" />
       <mapping pattern="channels_controller" type="Ruby" />
     </extensionMap>
